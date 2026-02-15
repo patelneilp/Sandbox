@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FeasibilityAnalysis",
+  "type": "object",
+  "required": [
+    "input_identifier",
+    "target_relevance",
+    "mechanism_of_action",
+    "predicted_activity",
+    "adme_tox",
+    "synthetic_feasibility_score",
+    "drug_likeness",
+    "confidence_score",
+    "recommendation"
+  ],
+  "properties": {
+    "input_identifier": { "type": "string" },
+    "resolved_structure": { "type": ["string", "null"] },
+    "target_relevance": { "type": "string" },
+    "mechanism_of_action": { "type": "string" },
+    "predicted_activity": { "type": "object" },
+    "adme_tox": { "type": "object" },
+    "synthetic_feasibility_score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "drug_likeness": { "type": "object" },
+    "confidence_score": { "type": "number", "minimum": 0, "maximum": 1 },
+    "recommendation": { "type": "string" }
+  }
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillSprint — Adaptive ML Learning</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+
+    <main class="app-shell">
+      <header class="header glass">
+        <div>
+          <p class="kicker">Adaptive Learning Trainer</p>
+          <h1>SkillSprint</h1>
+          <p class="subtitle">
+            Master Python, Linear Algebra, Probability, Software Engineering, MLOps,
+            Transformers, and Deployment with bite-size prompts.
+          </p>
+        </div>
+        <button id="resetProgressBtn" class="secondary">Reset Progress</button>
+      </header>
+
+      <section class="stats-grid">
+        <article class="card glass">
+          <h3>XP</h3>
+          <p id="xpValue" class="metric">0</p>
+          <small>Earned by correct answers</small>
+        </article>
+        <article class="card glass">
+          <h3>Streak</h3>
+          <p id="streakValue" class="metric">0 🔥</p>
+          <small>Consecutive correct answers</small>
+        </article>
+        <article class="card glass">
+          <h3>Accuracy</h3>
+          <p id="accuracyValue" class="metric">0%</p>
+          <small>Across attempted questions</small>
+        </article>
+      </section>
+
+      <section class="layout-grid">
+        <article class="question-panel glass">
+          <div class="question-header">
+            <span id="topicBadge" class="badge">Topic</span>
+            <span id="difficultyBadge" class="badge ghost">Level 1</span>
+          </div>
+
+          <h2 id="questionText">Loading question...</h2>
+          <p id="hintText" class="hint"></p>
+
+          <label for="answerInput">Your answer</label>
+          <textarea
+            id="answerInput"
+            rows="4"
+            placeholder="Type your answer here..."
+          ></textarea>
+
+          <div class="actions">
+            <button id="checkBtn" class="primary">Check Answer</button>
+            <button id="skipBtn" class="secondary">Skip</button>
+            <button id="nextBtn" class="ghost" disabled>Next</button>
+          </div>
+
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+
+          <details class="solution-box">
+            <summary>View solution</summary>
+            <p id="solutionText"></p>
+          </details>
+        </article>
+
+        <aside class="progress-panel glass">
+          <h3>Topic Mastery</h3>
+          <p class="helper">
+            The trainer prioritizes weaker topics to help you improve where it matters.
+          </p>
+          <div id="masteryList" class="mastery-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
